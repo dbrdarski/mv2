@@ -8,3 +8,4 @@ var once = function(fn){
   }
 }
 
+module.exports = once;
