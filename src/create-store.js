@@ -15,6 +15,7 @@ var createStore = function(app){
           get: once(module.bind(null, app)),
           enumberable: true
         })
+        return app;
       }
     };
     props[settings && settings.plural || (name + 's')] = {value: store};

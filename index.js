@@ -3,9 +3,11 @@ var createStore = require('./src/create-store')
 var app = (function(app = {}){
   app.define = function(name, value){
     Object.defineProperty(app, name, value)
+    return app;
   }
   app.run = function(mainModule){
     mainModule(app);
+    return app;
   }
   app.createStore = createStore(app);
   return app;
