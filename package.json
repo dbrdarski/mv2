@@ -1,0 +1,19 @@
+{
+  "name": "mv2",
+  "version": "1.0.0",
+  "description": "A tiny dependancy container for JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbrdarski/mv2.git"
+  },
+  "author": "Dane Brdarski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dbrdarski/mv2/issues"
+  },
+  "homepage": "https://github.com/dbrdarski/mv2#readme"
+}
