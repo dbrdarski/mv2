@@ -2,8 +2,15 @@ var createStore = require('./src/create-store')
 
 var app = (function(app = {}){
   app.define = function(name, value){
-    Object.defineProperty(app, name, value)
-    return app;
+    if(value == null && typeof name === 'object'){
+      Object.defineProperties(app, Object.entries(name).reduce(function(acc, i){
+        acc[i[0]] = { value: acc[i[1]] };
+        return acc;
+      }, {}));
+    } else {
+      Object.defineProperty(app, name, value)
+      return app;
+    }
   }
   app.run = function(mainModule){
     mainModule(app);
@@ -14,17 +21,4 @@ var app = (function(app = {}){
 }())
 
 app.createStore('module');
-console.log({module: app.module});
 module.exports = app;
-
-// app.module('m1', function() {
-//   return 1;
-// });
-//
-// app.module('m2', function({modules: { m1 }}) {
-//   return m1 + 1;
-// });
-//
-// app.run(function({modules}){
-//   modules()
-// })
