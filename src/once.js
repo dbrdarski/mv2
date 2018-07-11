@@ -1,8 +1,8 @@
 var once = function(fn){
   var resolve;
-  return function(){
+  return function(){    
     if (resolve == null){
-      resolve = fn.apply(null, arguments);
+      resolve = fn.apply(this, arguments);
     }
     return resolve;
   }
